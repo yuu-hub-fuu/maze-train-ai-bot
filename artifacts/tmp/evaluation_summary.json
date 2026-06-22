@@ -1,0 +1,448 @@
+{
+  "aggregate": [
+    {
+      "agent": "AStar-Resource",
+      "episodes": 6,
+      "success_rate": 0.6666666666666666,
+      "boss_clear_rate": 0.6666666666666666,
+      "avg_gold_left": 48.333333333333336,
+      "avg_steps": 28.833333333333332,
+      "avg_score_gold_per_step": 1.5607820284290874,
+      "avg_trap_count": 2.0,
+      "invalid_actions": 0
+    },
+    {
+      "agent": "BFS-to-End",
+      "episodes": 6,
+      "success_rate": 0.3333333333333333,
+      "boss_clear_rate": 0.3333333333333333,
+      "avg_gold_left": 25.0,
+      "avg_steps": 22.833333333333332,
+      "avg_score_gold_per_step": 1.1344048108753992,
+      "avg_trap_count": 1.6666666666666667,
+      "invalid_actions": 0
+    },
+    {
+      "agent": "Greedy-3x3",
+      "episodes": 6,
+      "success_rate": 0.6666666666666666,
+      "boss_clear_rate": 0.6666666666666666,
+      "avg_gold_left": 48.333333333333336,
+      "avg_steps": 28.833333333333332,
+      "avg_score_gold_per_step": 1.5607820284290874,
+      "avg_trap_count": 2.0,
+      "invalid_actions": 0
+    },
+    {
+      "agent": "Ours-PostTrained-MazeAgent",
+      "episodes": 6,
+      "success_rate": 0.3333333333333333,
+      "boss_clear_rate": 0.3333333333333333,
+      "avg_gold_left": 56.666666666666664,
+      "avg_steps": 144.66666666666666,
+      "avg_score_gold_per_step": 0.5244184702884315,
+      "avg_trap_count": 2.0,
+      "invalid_actions": 0
+    }
+  ],
+  "runs": [
+    {
+      "agent": "Greedy-3x3",
+      "maze": "shortest-2026",
+      "scenario": "shortest",
+      "success": true,
+      "boss_clear": true,
+      "gold": 50,
+      "steps": 30,
+      "score": 1.6666666666666667,
+      "trap_count": 0,
+      "invalid_actions": 0
+    },
+    {
+      "agent": "BFS-to-End",
+      "maze": "shortest-2026",
+      "scenario": "shortest",
+      "success": true,
+      "boss_clear": true,
+      "gold": 50,
+      "steps": 30,
+      "score": 1.6666666666666667,
+      "trap_count": 0,
+      "invalid_actions": 0
+    },
+    {
+      "agent": "AStar-Resource",
+      "maze": "shortest-2026",
+      "scenario": "shortest",
+      "success": true,
+      "boss_clear": true,
+      "gold": 50,
+      "steps": 30,
+      "score": 1.6666666666666667,
+      "trap_count": 0,
+      "invalid_actions": 0
+    },
+    {
+      "agent": "Ours-PostTrained-MazeAgent",
+      "maze": "shortest-2026",
+      "scenario": "shortest",
+      "success": true,
+      "boss_clear": true,
+      "gold": 50,
+      "steps": 46,
+      "score": 1.0869565217391304,
+      "trap_count": 0,
+      "invalid_actions": 0
+    },
+    {
+      "agent": "Greedy-3x3",
+      "maze": "on_path_gold-2027",
+      "scenario": "on_path_gold",
+      "success": true,
+      "boss_clear": true,
+      "gold": 100,
+      "steps": 26,
+      "score": 3.8461538461538463,
+      "trap_count": 0,
+      "invalid_actions": 0
+    },
+    {
+      "agent": "BFS-to-End",
+      "maze": "on_path_gold-2027",
+      "scenario": "on_path_gold",
+      "success": true,
+      "boss_clear": true,
+      "gold": 100,
+      "steps": 26,
+      "score": 3.8461538461538463,
+      "trap_count": 0,
+      "invalid_actions": 0
+    },
+    {
+      "agent": "AStar-Resource",
+      "maze": "on_path_gold-2027",
+      "scenario": "on_path_gold",
+      "success": true,
+      "boss_clear": true,
+      "gold": 100,
+      "steps": 26,
+      "score": 3.8461538461538463,
+      "trap_count": 0,
+      "invalid_actions": 0
+    },
+    {
+      "agent": "Ours-PostTrained-MazeAgent",
+      "maze": "on_path_gold-2027",
+      "scenario": "on_path_gold",
+      "success": true,
+      "boss_clear": true,
+      "gold": 100,
+      "steps": 74,
+      "score": 1.3513513513513513,
+      "trap_count": 0,
+      "invalid_actions": 0
+    },
+    {
+      "agent": "Greedy-3x3",
+      "maze": "detour_gold-2028",
+      "scenario": "detour_gold",
+      "success": true,
+      "boss_clear": true,
+      "gold": 20,
+      "steps": 34,
+      "score": 0.5882352941176471,
+      "trap_count": 1,
+      "invalid_actions": 0
+    },
+    {
+      "agent": "BFS-to-End",
+      "maze": "detour_gold-2028",
+      "scenario": "detour_gold",
+      "success": false,
+      "boss_clear": false,
+      "gold": -30,
+      "steps": 21,
+      "score": -1.4285714285714286,
+      "trap_count": 1,
+      "invalid_actions": 0
+    },
+    {
+      "agent": "AStar-Resource",
+      "maze": "detour_gold-2028",
+      "scenario": "detour_gold",
+      "success": true,
+      "boss_clear": true,
+      "gold": 20,
+      "steps": 34,
+      "score": 0.5882352941176471,
+      "trap_count": 1,
+      "invalid_actions": 0
+    },
+    {
+      "agent": "Ours-PostTrained-MazeAgent",
+      "maze": "detour_gold-2028",
+      "scenario": "detour_gold",
+      "success": false,
+      "boss_clear": false,
+      "gold": -30,
+      "steps": 39,
+      "score": -0.7692307692307693,
+      "trap_count": 1,
+      "invalid_actions": 0
+    },
+    {
+      "agent": "Greedy-3x3",
+      "maze": "avoid_trap-2029",
+      "scenario": "avoid_trap",
+      "success": false,
+      "boss_clear": false,
+      "gold": -80,
+      "steps": 22,
+      "score": -3.6363636363636362,
+      "trap_count": 6,
+      "invalid_actions": 0
+    },
+    {
+      "agent": "BFS-to-End",
+      "maze": "avoid_trap-2029",
+      "scenario": "avoid_trap",
+      "success": false,
+      "boss_clear": false,
+      "gold": -80,
+      "steps": 22,
+      "score": -3.6363636363636362,
+      "trap_count": 6,
+      "invalid_actions": 0
+    },
+    {
+      "agent": "AStar-Resource",
+      "maze": "avoid_trap-2029",
+      "scenario": "avoid_trap",
+      "success": false,
+      "boss_clear": false,
+      "gold": -80,
+      "steps": 22,
+      "score": -3.6363636363636362,
+      "trap_count": 6,
+      "invalid_actions": 0
+    },
+    {
+      "agent": "Ours-PostTrained-MazeAgent",
+      "maze": "avoid_trap-2029",
+      "scenario": "avoid_trap",
+      "success": false,
+      "boss_clear": false,
+      "gold": -80,
+      "steps": 324,
+      "score": -0.24691358024691357,
+      "trap_count": 6,
+      "invalid_actions": 0
+    },
+    {
+      "agent": "Greedy-3x3",
+      "maze": "trap_required-2030",
+      "scenario": "trap_required",
+      "success": true,
+      "boss_clear": true,
+      "gold": 90,
+      "steps": 36,
+      "score": 2.5,
+      "trap_count": 2,
+      "invalid_actions": 0
+    },
+    {
+      "agent": "BFS-to-End",
+      "maze": "trap_required-2030",
+      "scenario": "trap_required",
+      "success": false,
+      "boss_clear": false,
+      "gold": 100,
+      "steps": 17,
+      "score": 5.882352941176471,
+      "trap_count": 0,
+      "invalid_actions": 0
+    },
+    {
+      "agent": "AStar-Resource",
+      "maze": "trap_required-2030",
+      "scenario": "trap_required",
+      "success": true,
+      "boss_clear": true,
+      "gold": 90,
+      "steps": 36,
+      "score": 2.5,
+      "trap_count": 2,
+      "invalid_actions": 0
+    },
+    {
+      "agent": "Ours-PostTrained-MazeAgent",
+      "maze": "trap_required-2030",
+      "scenario": "trap_required",
+      "success": false,
+      "boss_clear": false,
+      "gold": 240,
+      "steps": 324,
+      "score": 0.7407407407407407,
+      "trap_count": 2,
+      "invalid_actions": 0
+    },
+    {
+      "agent": "Greedy-3x3",
+      "maze": "boss_gate-2031",
+      "scenario": "boss_gate",
+      "success": false,
+      "boss_clear": false,
+      "gold": 110,
+      "steps": 25,
+      "score": 4.4,
+      "trap_count": 3,
+      "invalid_actions": 0
+    },
+    {
+      "agent": "BFS-to-End",
+      "maze": "boss_gate-2031",
+      "scenario": "boss_gate",
+      "success": false,
+      "boss_clear": false,
+      "gold": 10,
+      "steps": 21,
+      "score": 0.47619047619047616,
+      "trap_count": 3,
+      "invalid_actions": 0
+    },
+    {
+      "agent": "AStar-Resource",
+      "maze": "boss_gate-2031",
+      "scenario": "boss_gate",
+      "success": false,
+      "boss_clear": false,
+      "gold": 110,
+      "steps": 25,
+      "score": 4.4,
+      "trap_count": 3,
+      "invalid_actions": 0
+    },
+    {
+      "agent": "Ours-PostTrained-MazeAgent",
+      "maze": "boss_gate-2031",
+      "scenario": "boss_gate",
+      "success": false,
+      "boss_clear": false,
+      "gold": 60,
+      "steps": 61,
+      "score": 0.9836065573770492,
+      "trap_count": 3,
+      "invalid_actions": 0
+    }
+  ],
+  "mazes": [
+    {
+      "name": "shortest-2026",
+      "scenario": "shortest",
+      "boss_cost": 50,
+      "coin_value": 50,
+      "trap_damage": 30,
+      "grid": [
+        "#########",
+        "#S...G..#",
+        "#######.#",
+        "#..B..#.#",
+        "#.###.#.#",
+        "#.#E..#.#",
+        "#.#####.#",
+        "#.....G.#",
+        "#########"
+      ]
+    },
+    {
+      "name": "on_path_gold-2027",
+      "scenario": "on_path_gold",
+      "boss_cost": 100,
+      "coin_value": 50,
+      "trap_damage": 30,
+      "grid": [
+        "#########",
+        "#S.G#..E#",
+        "###.#.###",
+        "#...#.B.#",
+        "#.#####.#",
+        "#..G#...#",
+        "###G#.#T#",
+        "#T.G..#T#",
+        "#########"
+      ]
+    },
+    {
+      "name": "detour_gold-2028",
+      "scenario": "detour_gold",
+      "boss_cost": 150,
+      "coin_value": 50,
+      "trap_damage": 30,
+      "grid": [
+        "#########",
+        "#S#E....#",
+        "#.#####B#",
+        "#.T.#...#",
+        "###.#.###",
+        "#G#.#...#",
+        "#G#.###.#",
+        "#GG.....#",
+        "#########"
+      ]
+    },
+    {
+      "name": "avoid_trap-2029",
+      "scenario": "avoid_trap",
+      "boss_cost": 100,
+      "coin_value": 50,
+      "trap_damage": 30,
+      "grid": [
+        "#########",
+        "#STGTTTT#",
+        "#######T#",
+        "#B..G.#.#",
+        "#.###.#G#",
+        "#...#E#.#",
+        "#.#.###.#",
+        "#.#.....#",
+        "#########"
+      ]
+    },
+    {
+      "name": "trap_required-2030",
+      "scenario": "trap_required",
+      "boss_cost": 200,
+      "coin_value": 50,
+      "trap_damage": 30,
+      "grid": [
+        "#########",
+        "#S#TGTGG#",
+        "#.#####G#",
+        "#.....#G#",
+        "#####.#T#",
+        "#...#..G#",
+        "#.#B###.#",
+        "#E#..G..#",
+        "#########"
+      ]
+    },
+    {
+      "name": "boss_gate-2031",
+      "scenario": "boss_gate",
+      "boss_cost": 150,
+      "coin_value": 50,
+      "trap_damage": 30,
+      "grid": [
+        "#########",
+        "#S#TTT..#",
+        "#.#.###.#",
+        "#.#.#G#.#",
+        "#.#.#G#.#",
+        "#..G#..G#",
+        "#####B###",
+        "#E....GG#",
+        "#########"
+      ]
+    }
+  ]
+}

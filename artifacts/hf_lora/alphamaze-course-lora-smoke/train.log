@@ -1,0 +1,7 @@
+{'loss': 0.0, 'grad_norm': nan, 'learning_rate': 0.0002, 'entropy': nan, 'mean_token_accuracy': 0.0, 'num_tokens': 1206.0, 'epoch': 0.12}
+{'loss': 0.0, 'grad_norm': nan, 'learning_rate': 0.0002, 'entropy': nan, 'mean_token_accuracy': 0.0, 'num_tokens': 2403.0, 'epoch': 0.25}
+{'loss': 0.0, 'grad_norm': nan, 'learning_rate': 0.0002, 'entropy': nan, 'mean_token_accuracy': 0.0, 'num_tokens': 3602.0, 'epoch': 0.38}
+{'loss': 0.0, 'grad_norm': nan, 'learning_rate': 0.0002, 'entropy': nan, 'mean_token_accuracy': 0.0, 'num_tokens': 4811.0, 'epoch': 0.5}
+{'loss': 0.0, 'grad_norm': nan, 'learning_rate': 0.0002, 'entropy': nan, 'mean_token_accuracy': 0.0, 'num_tokens': 6012.0, 'epoch': 0.62}
+{'train_runtime': 34.4163, 'train_samples_per_second': 1.162, 'train_steps_per_second': 0.145, 'train_loss': 0.0, 'epoch': 0.62}
+saved LoRA adapter: artifacts\hf_lora\alphamaze-course-lora-smoke

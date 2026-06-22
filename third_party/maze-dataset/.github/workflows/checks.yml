@@ -1,0 +1,93 @@
+name: Checks
+
+on:
+  workflow_dispatch:
+  pull_request:
+    branches:
+      - '*'
+  push:
+    branches:
+      - main
+
+jobs:
+  lint:
+    name: Formatting
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with: 
+          fetch-depth: 0
+
+      - name: Install linters
+        run: pip install -r .meta/requirements/requirements-lint.txt
+
+      - name: Run Format Checks
+        run: make format-check RUN_GLOBAL=1
+
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python: ["3.10", "3.11", "3.12", "3.13"]
+        pkg:
+          - numpy: "1.24.4"
+            group: "legacy"
+          - numpy: ""
+            group: "latest"
+        exclude:
+          - python: "3.12"
+            pkg:
+              group: "legacy"
+          - python: "3.13"
+            pkg:
+              group: "legacy"
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with: 
+          fetch-depth: 1
+
+      - name: Install uv and set the python version
+        uses: astral-sh/setup-uv@v6
+        with:
+          python-version: ${{ matrix.python }}
+  
+      - name: check dependencies
+        run: make dep-check
+
+      - name: install dependencies and package
+        run: make dep
+
+      - name: Install different numpy version
+        if: ${{ matrix.pkg.numpy != '' }}
+        run: uv pip install numpy==${{ matrix.pkg.numpy }}
+      
+      - name: info
+        run: make info-long
+
+      - name: format check
+        run: make format-check
+
+      - name: Unit tests
+        run: make test-unit
+
+      - name: Remove system Julia so juliapkg installs compatible version
+        run: sudo rm -f /usr/bin/julia /usr/local/bin/julia
+
+      - name: Notebook tests (nbmake)
+        run: make test-notebooks-nbmake  
+      
+      - name: Notebook tests (muutils)
+        run: make test-notebooks-muutils      
+        
+      - name: check typing (3.11+)
+        run: make typing
+        if: ${{ matrix.python != '3.10' }}
+        
+      - name: run benchmarks tests
+        run: make benchmark-test
+      
+      - name: Test Tokenizer fst # test a reduced number of tokenizers
+        run: make tokenizer-fst-check NUM_TOKENIZERS_TO_TEST=1000

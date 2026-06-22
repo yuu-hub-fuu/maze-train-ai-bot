@@ -1,0 +1,29 @@
+from __future__ import annotations
+
+ACTIONS = ("UP", "DOWN", "LEFT", "RIGHT", "ATTACK_BOSS", "STOP")
+MOVE_DELTAS = {
+    "UP": (-1, 0),
+    "DOWN": (1, 0),
+    "LEFT": (0, -1),
+    "RIGHT": (0, 1),
+}
+
+WALL = "#"
+EMPTY = "."
+START = "S"
+EXIT = "E"
+BOSS = "B"
+COIN = "G"
+TRAP = "T"
+
+COIN_VALUE = 50
+TRAP_DAMAGE = 30
+DEFAULT_BOSS_COST = 150
+
+REWARD_EXIT = 100
+REWARD_BOSS = 100
+REWARD_COIN = 50
+REWARD_TRAP = -30
+REWARD_STEP = -1
+REWARD_INVALID = -100
+REWARD_BOSS_FAIL = -200

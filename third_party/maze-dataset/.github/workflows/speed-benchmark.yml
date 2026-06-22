@@ -1,0 +1,45 @@
+name: Benchmark Generation
+
+on:
+  workflow_dispatch:
+    inputs:
+      analysis_type:
+        description: 'Benchmark analysis type to run'
+        required: true
+        default: 'large'
+        type: choice
+        options:
+          - test
+          - default
+          - large
+
+jobs:
+  benchmark:
+    name: Run Benchmark
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      
+      - name: Install uv and set the python version
+        uses: astral-sh/setup-uv@v6
+        with:
+          python-version: '3.11'
+      
+      - name: Install dependencies and package
+        run: make dep
+      
+      - name: Info
+        run: make info-long
+      
+      - name: Run benchmark
+        run: uv run python docs/benchmarks/benchmark_generation.py ${{ github.event.inputs.analysis_type }} --save-path benchmarks/results/benchmark_data.jsonl
+      
+      - name: Upload benchmark results
+        uses: actions/upload-artifact@v4
+        with:
+          name: benchmark-results-${{ github.event.inputs.analysis_type }}
+          path: benchmarks/results/benchmark_data.jsonl
+          retention-days: 90

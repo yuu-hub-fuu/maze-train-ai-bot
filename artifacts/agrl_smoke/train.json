@@ -1,0 +1,980 @@
+[
+  {
+    "sample_id": "train-Easy-7",
+    "seed": 7,
+    "rows": 9,
+    "cols": 9,
+    "grid": [
+      "#########",
+      "#S#G....#",
+      "#.#G###.#",
+      "#G#...#.#",
+      "#.#G#.#B#",
+      "#.#T#.#.#",
+      "#.###G#.#",
+      "#.....#E#",
+      "#########"
+    ],
+    "start": [
+      1,
+      1
+    ],
+    "end": [
+      7,
+      7
+    ],
+    "boss": [
+      4,
+      7
+    ],
+    "coins": [
+      [
+        1,
+        3
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        3,
+        1
+      ],
+      [
+        4,
+        3
+      ],
+      [
+        6,
+        5
+      ]
+    ],
+    "traps": [
+      [
+        5,
+        3
+      ]
+    ],
+    "difficulty": "Easy",
+    "boss_config": {
+      "hp": 15,
+      "turn_limit": 4,
+      "revive_cost": 40
+    },
+    "skill_config": [
+      {
+        "name": "normal_attack",
+        "damage": 5,
+        "cooldown": 0
+      },
+      {
+        "name": "ultimate",
+        "damage": 10,
+        "cooldown": 2
+      }
+    ],
+    "train_split": "train",
+    "expert_solution": {
+      "recommended_path": [],
+      "final_resource": 250,
+      "total_steps": 31,
+      "final_score": 8.064516129032258,
+      "success": false
+    }
+  },
+  {
+    "sample_id": "train-Easy-8",
+    "seed": 8,
+    "rows": 9,
+    "cols": 9,
+    "grid": [
+      "#########",
+      "#S#.....#",
+      "#.#.###.#",
+      "#.#G#EB.#",
+      "#G#.#####",
+      "#G#.G...#",
+      "#.#####.#",
+      "#.......#",
+      "#########"
+    ],
+    "start": [
+      1,
+      1
+    ],
+    "end": [
+      3,
+      5
+    ],
+    "boss": [
+      3,
+      6
+    ],
+    "coins": [
+      [
+        3,
+        3
+      ],
+      [
+        4,
+        1
+      ],
+      [
+        5,
+        1
+      ],
+      [
+        5,
+        4
+      ]
+    ],
+    "traps": [],
+    "difficulty": "Easy",
+    "boss_config": {
+      "hp": 15,
+      "turn_limit": 4,
+      "revive_cost": 40
+    },
+    "skill_config": [
+      {
+        "name": "normal_attack",
+        "damage": 5,
+        "cooldown": 0
+      },
+      {
+        "name": "ultimate",
+        "damage": 10,
+        "cooldown": 2
+      }
+    ],
+    "train_split": "train",
+    "expert_solution": {
+      "recommended_path": [],
+      "final_resource": 200,
+      "total_steps": 30,
+      "final_score": 6.666666666666667,
+      "success": true
+    }
+  },
+  {
+    "sample_id": "train-Easy-9",
+    "seed": 9,
+    "rows": 9,
+    "cols": 9,
+    "grid": [
+      "#########",
+      "#S#.....#",
+      "#.#.###.#",
+      "#.#.#.GG#",
+      "#G#.#.###",
+      "#...#...#",
+      "#######.#",
+      "#EBG....#",
+      "#########"
+    ],
+    "start": [
+      1,
+      1
+    ],
+    "end": [
+      7,
+      1
+    ],
+    "boss": [
+      7,
+      2
+    ],
+    "coins": [
+      [
+        3,
+        6
+      ],
+      [
+        3,
+        7
+      ],
+      [
+        4,
+        1
+      ],
+      [
+        7,
+        3
+      ]
+    ],
+    "traps": [],
+    "difficulty": "Easy",
+    "boss_config": {
+      "hp": 15,
+      "turn_limit": 4,
+      "revive_cost": 40
+    },
+    "skill_config": [
+      {
+        "name": "normal_attack",
+        "damage": 5,
+        "cooldown": 0
+      },
+      {
+        "name": "ultimate",
+        "damage": 10,
+        "cooldown": 2
+      }
+    ],
+    "train_split": "train",
+    "expert_solution": {
+      "recommended_path": [],
+      "final_resource": 200,
+      "total_steps": 30,
+      "final_score": 6.666666666666667,
+      "success": true
+    }
+  },
+  {
+    "sample_id": "train-Easy-10",
+    "seed": 10,
+    "rows": 9,
+    "cols": 9,
+    "grid": [
+      "#########",
+      "#S....#.#",
+      "#####.#T#",
+      "#E#...#G#",
+      "#.#G###.#",
+      "#B#..G..#",
+      "#.#####.#",
+      "#G.G....#",
+      "#########"
+    ],
+    "start": [
+      1,
+      1
+    ],
+    "end": [
+      3,
+      1
+    ],
+    "boss": [
+      5,
+      1
+    ],
+    "coins": [
+      [
+        3,
+        7
+      ],
+      [
+        4,
+        3
+      ],
+      [
+        5,
+        5
+      ],
+      [
+        7,
+        1
+      ],
+      [
+        7,
+        3
+      ]
+    ],
+    "traps": [
+      [
+        2,
+        7
+      ]
+    ],
+    "difficulty": "Easy",
+    "boss_config": {
+      "hp": 15,
+      "turn_limit": 4,
+      "revive_cost": 40
+    },
+    "skill_config": [
+      {
+        "name": "normal_attack",
+        "damage": 5,
+        "cooldown": 0
+      },
+      {
+        "name": "ultimate",
+        "damage": 10,
+        "cooldown": 2
+      }
+    ],
+    "train_split": "train",
+    "expert_solution": {
+      "recommended_path": [],
+      "final_resource": 220,
+      "total_steps": 32,
+      "final_score": 6.875,
+      "success": false
+    }
+  },
+  {
+    "sample_id": "train-Easy-11",
+    "seed": 11,
+    "rows": 9,
+    "cols": 9,
+    "grid": [
+      "#########",
+      "#S#.G..G#",
+      "#.#B#.###",
+      "#.#E#...#",
+      "#.#####.#",
+      "#.GG.G#.#",
+      "#####.#.#",
+      "#...T...#",
+      "#########"
+    ],
+    "start": [
+      1,
+      1
+    ],
+    "end": [
+      3,
+      3
+    ],
+    "boss": [
+      2,
+      3
+    ],
+    "coins": [
+      [
+        1,
+        4
+      ],
+      [
+        1,
+        7
+      ],
+      [
+        5,
+        2
+      ],
+      [
+        5,
+        3
+      ],
+      [
+        5,
+        5
+      ]
+    ],
+    "traps": [
+      [
+        7,
+        4
+      ]
+    ],
+    "difficulty": "Easy",
+    "boss_config": {
+      "hp": 15,
+      "turn_limit": 4,
+      "revive_cost": 40
+    },
+    "skill_config": [
+      {
+        "name": "normal_attack",
+        "damage": 5,
+        "cooldown": 0
+      },
+      {
+        "name": "ultimate",
+        "damage": 10,
+        "cooldown": 2
+      }
+    ],
+    "train_split": "train",
+    "expert_solution": {
+      "recommended_path": [],
+      "final_resource": 170,
+      "total_steps": 32,
+      "final_score": 5.3125,
+      "success": true
+    }
+  },
+  {
+    "sample_id": "train-Easy-12",
+    "seed": 12,
+    "rows": 9,
+    "cols": 9,
+    "grid": [
+      "#########",
+      "#S#T..GG#",
+      "#.#.#.#.#",
+      "#.#G#.#.#",
+      "#.###.#.#",
+      "#.G...#.#",
+      "#######.#",
+      "#E.GB...#",
+      "#########"
+    ],
+    "start": [
+      1,
+      1
+    ],
+    "end": [
+      7,
+      1
+    ],
+    "boss": [
+      7,
+      4
+    ],
+    "coins": [
+      [
+        1,
+        6
+      ],
+      [
+        1,
+        7
+      ],
+      [
+        3,
+        3
+      ],
+      [
+        5,
+        2
+      ],
+      [
+        7,
+        3
+      ]
+    ],
+    "traps": [
+      [
+        1,
+        3
+      ]
+    ],
+    "difficulty": "Easy",
+    "boss_config": {
+      "hp": 15,
+      "turn_limit": 4,
+      "revive_cost": 40
+    },
+    "skill_config": [
+      {
+        "name": "normal_attack",
+        "damage": 5,
+        "cooldown": 0
+      },
+      {
+        "name": "ultimate",
+        "damage": 10,
+        "cooldown": 2
+      }
+    ],
+    "train_split": "train",
+    "expert_solution": {
+      "recommended_path": [],
+      "final_resource": 200,
+      "total_steps": 24,
+      "final_score": 8.333333333333334,
+      "success": false
+    }
+  },
+  {
+    "sample_id": "train-Easy-13",
+    "seed": 13,
+    "rows": 9,
+    "cols": 9,
+    "grid": [
+      "#########",
+      "#S#GT.G.#",
+      "#.###.#B#",
+      "#...#.#E#",
+      "###G#.###",
+      "#...#...#",
+      "#.#####.#",
+      "#..GG...#",
+      "#########"
+    ],
+    "start": [
+      1,
+      1
+    ],
+    "end": [
+      3,
+      7
+    ],
+    "boss": [
+      2,
+      7
+    ],
+    "coins": [
+      [
+        1,
+        3
+      ],
+      [
+        1,
+        6
+      ],
+      [
+        4,
+        3
+      ],
+      [
+        7,
+        3
+      ],
+      [
+        7,
+        4
+      ]
+    ],
+    "traps": [
+      [
+        1,
+        4
+      ]
+    ],
+    "difficulty": "Easy",
+    "boss_config": {
+      "hp": 15,
+      "turn_limit": 4,
+      "revive_cost": 40
+    },
+    "skill_config": [
+      {
+        "name": "normal_attack",
+        "damage": 5,
+        "cooldown": 0
+      },
+      {
+        "name": "ultimate",
+        "damage": 10,
+        "cooldown": 2
+      }
+    ],
+    "train_split": "train",
+    "expert_solution": {
+      "recommended_path": [],
+      "final_resource": 200,
+      "total_steps": 28,
+      "final_score": 7.142857142857143,
+      "success": true
+    }
+  },
+  {
+    "sample_id": "train-Easy-14",
+    "seed": 14,
+    "rows": 9,
+    "cols": 9,
+    "grid": [
+      "#########",
+      "#S..#.GE#",
+      "###.#B###",
+      "#G.G#..G#",
+      "#.#####.#",
+      "#...#...#",
+      "###.#.#T#",
+      "#.....#G#",
+      "#########"
+    ],
+    "start": [
+      1,
+      1
+    ],
+    "end": [
+      1,
+      7
+    ],
+    "boss": [
+      2,
+      5
+    ],
+    "coins": [
+      [
+        1,
+        6
+      ],
+      [
+        3,
+        1
+      ],
+      [
+        3,
+        3
+      ],
+      [
+        3,
+        7
+      ],
+      [
+        7,
+        7
+      ]
+    ],
+    "traps": [
+      [
+        6,
+        7
+      ]
+    ],
+    "difficulty": "Easy",
+    "boss_config": {
+      "hp": 15,
+      "turn_limit": 4,
+      "revive_cost": 40
+    },
+    "skill_config": [
+      {
+        "name": "normal_attack",
+        "damage": 5,
+        "cooldown": 0
+      },
+      {
+        "name": "ultimate",
+        "damage": 10,
+        "cooldown": 2
+      }
+    ],
+    "train_split": "train",
+    "expert_solution": {
+      "recommended_path": [],
+      "final_resource": 200,
+      "total_steps": 30,
+      "final_score": 6.666666666666667,
+      "success": true
+    }
+  },
+  {
+    "sample_id": "train-Easy-15",
+    "seed": 15,
+    "rows": 9,
+    "cols": 9,
+    "grid": [
+      "#########",
+      "#S..#...#",
+      "###.#.###",
+      "#E#.#..G#",
+      "#B#G###T#",
+      "#.#.....#",
+      "#.#####.#",
+      "#...GG.G#",
+      "#########"
+    ],
+    "start": [
+      1,
+      1
+    ],
+    "end": [
+      3,
+      1
+    ],
+    "boss": [
+      4,
+      1
+    ],
+    "coins": [
+      [
+        3,
+        7
+      ],
+      [
+        4,
+        3
+      ],
+      [
+        7,
+        4
+      ],
+      [
+        7,
+        5
+      ],
+      [
+        7,
+        7
+      ]
+    ],
+    "traps": [
+      [
+        4,
+        7
+      ]
+    ],
+    "difficulty": "Easy",
+    "boss_config": {
+      "hp": 15,
+      "turn_limit": 4,
+      "revive_cost": 40
+    },
+    "skill_config": [
+      {
+        "name": "normal_attack",
+        "damage": 5,
+        "cooldown": 0
+      },
+      {
+        "name": "ultimate",
+        "damage": 10,
+        "cooldown": 2
+      }
+    ],
+    "train_split": "train",
+    "expert_solution": {
+      "recommended_path": [],
+      "final_resource": 220,
+      "total_steps": 38,
+      "final_score": 5.7894736842105265,
+      "success": true
+    }
+  },
+  {
+    "sample_id": "train-Easy-16",
+    "seed": 16,
+    "rows": 9,
+    "cols": 9,
+    "grid": [
+      "#########",
+      "#S#E.B.G#",
+      "#.###.###",
+      "#...#.G.#",
+      "###.#.#.#",
+      "#T#.#.#G#",
+      "#.#.###.#",
+      "#....GG.#",
+      "#########"
+    ],
+    "start": [
+      1,
+      1
+    ],
+    "end": [
+      1,
+      3
+    ],
+    "boss": [
+      1,
+      5
+    ],
+    "coins": [
+      [
+        1,
+        7
+      ],
+      [
+        3,
+        6
+      ],
+      [
+        5,
+        7
+      ],
+      [
+        7,
+        5
+      ],
+      [
+        7,
+        6
+      ]
+    ],
+    "traps": [
+      [
+        5,
+        1
+      ]
+    ],
+    "difficulty": "Easy",
+    "boss_config": {
+      "hp": 15,
+      "turn_limit": 4,
+      "revive_cost": 40
+    },
+    "skill_config": [
+      {
+        "name": "normal_attack",
+        "damage": 5,
+        "cooldown": 0
+      },
+      {
+        "name": "ultimate",
+        "damage": 10,
+        "cooldown": 2
+      }
+    ],
+    "train_split": "train",
+    "expert_solution": {
+      "recommended_path": [],
+      "final_resource": 200,
+      "total_steps": 26,
+      "final_score": 7.6923076923076925,
+      "success": false
+    }
+  },
+  {
+    "sample_id": "train-Easy-17",
+    "seed": 17,
+    "rows": 9,
+    "cols": 9,
+    "grid": [
+      "#########",
+      "#S#...G.#",
+      "#.#####T#",
+      "#.GG....#",
+      "#######.#",
+      "#E#..G#.#",
+      "#B#.#.#.#",
+      "#...#.G.#",
+      "#########"
+    ],
+    "start": [
+      1,
+      1
+    ],
+    "end": [
+      5,
+      1
+    ],
+    "boss": [
+      6,
+      1
+    ],
+    "coins": [
+      [
+        1,
+        6
+      ],
+      [
+        3,
+        2
+      ],
+      [
+        3,
+        3
+      ],
+      [
+        5,
+        5
+      ],
+      [
+        7,
+        6
+      ]
+    ],
+    "traps": [
+      [
+        2,
+        7
+      ]
+    ],
+    "difficulty": "Easy",
+    "boss_config": {
+      "hp": 15,
+      "turn_limit": 4,
+      "revive_cost": 40
+    },
+    "skill_config": [
+      {
+        "name": "normal_attack",
+        "damage": 5,
+        "cooldown": 0
+      },
+      {
+        "name": "ultimate",
+        "damage": 10,
+        "cooldown": 2
+      }
+    ],
+    "train_split": "train",
+    "expert_solution": {
+      "recommended_path": [],
+      "final_resource": 220,
+      "total_steps": 34,
+      "final_score": 6.470588235294118,
+      "success": true
+    }
+  },
+  {
+    "sample_id": "train-Easy-18",
+    "seed": 18,
+    "rows": 9,
+    "cols": 9,
+    "grid": [
+      "#########",
+      "#S.G.G..#",
+      "#######.#",
+      "#..B.E#.#",
+      "#.#####.#",
+      "#...#...#",
+      "#G#G#.###",
+      "#T#.G...#",
+      "#########"
+    ],
+    "start": [
+      1,
+      1
+    ],
+    "end": [
+      3,
+      5
+    ],
+    "boss": [
+      3,
+      3
+    ],
+    "coins": [
+      [
+        1,
+        3
+      ],
+      [
+        1,
+        5
+      ],
+      [
+        6,
+        1
+      ],
+      [
+        6,
+        3
+      ],
+      [
+        7,
+        4
+      ]
+    ],
+    "traps": [
+      [
+        7,
+        1
+      ]
+    ],
+    "difficulty": "Easy",
+    "boss_config": {
+      "hp": 15,
+      "turn_limit": 4,
+      "revive_cost": 40
+    },
+    "skill_config": [
+      {
+        "name": "normal_attack",
+        "damage": 5,
+        "cooldown": 0
+      },
+      {
+        "name": "ultimate",
+        "damage": 10,
+        "cooldown": 2
+      }
+    ],
+    "train_split": "train",
+    "expert_solution": {
+      "recommended_path": [],
+      "final_resource": 220,
+      "total_steps": 28,
+      "final_score": 7.857142857142857,
+      "success": false
+    }
+  }
+]
