@@ -1,0 +1,8 @@
+{
+  "episodes": 2500,
+  "device": "cuda",
+  "action_space": "225 waypoint coordinates plus CASH_BOSS and CASH_EXIT option heads",
+  "success_last_100": 0.94,
+  "avg_reward_last_100": 10.011881397305878,
+  "avg_loss_last_100": 9.03770604133606
+}

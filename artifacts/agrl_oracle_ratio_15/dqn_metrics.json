@@ -1,0 +1,19 @@
+{
+  "episodes": 8000,
+  "input_dim": 83,
+  "device": "cuda",
+  "actions": [
+    "NEAREST_GOLD",
+    "BEST_VALUE_GOLD",
+    "MAIN_PATH_GOLD",
+    "GO_BOSS",
+    "GO_EXIT",
+    "AVOID_TRAP",
+    "EXPLORE"
+  ],
+  "avg_reward_last_100": 501.1268776558443,
+  "success_last_100": 0.89,
+  "avg_loss_last_100": 10.169245958328247,
+  "teacher_start": 0.75,
+  "reward_objective": "terminal reward includes 80 * final_resource / steps; per-step penalty is -1"
+}

@@ -794,7 +794,7 @@ def memory_shortest_path(sample: MazeSample, state: PlayerState, goal: Coord) ->
 
 
 def frontier_target(sample: MazeSample, state: PlayerState) -> Target | None:
-    best: tuple[int, Coord] | None = None
+    best: tuple[int, int, Coord] | None = None
     for pos, ch in state.known.items():
         if ch == WALL:
             continue
@@ -806,14 +806,14 @@ def frontier_target(sample: MazeSample, state: PlayerState) -> Target | None:
         if unknown_adj <= 0:
             continue
         path = memory_shortest_path(sample, state, pos)
-        if path is None:
+        if path is None or len(path) == 0:
             continue
-        cand = (len(path), pos)
+        cand = (len(path), -unknown_adj, pos)
         if best is None or cand < best:
             best = cand
     if best is None:
         return None
-    dist, pos = best
+    dist, _, pos = best
     return Target(f"frontier-{pos[0]}-{pos[1]}", "explore", pos, 0, dist, 0, 0, -dist, True)
 
 def sample_value(sample: MazeSample, state: PlayerState, pos: Coord) -> int:
@@ -955,3 +955,4 @@ def save_json(path: str | Path, data: Any) -> None:
 
 def load_samples(path: str | Path) -> list[MazeSample]:
     return [MazeSample.from_dict(x) for x in json.loads(Path(path).read_text(encoding="utf-8"))]
+

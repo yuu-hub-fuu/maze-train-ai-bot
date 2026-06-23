@@ -44,7 +44,14 @@ HTML_TEMPLATE = r"""<!doctype html>
     .stat b { display: block; font-size: 20px; margin-top: 4px; }
     .stage { display: grid; grid-template-columns: minmax(320px, 520px) 1fr; gap: 22px; align-items: start; }
     .board { display: grid; gap: 2px; background: var(--line); border: 1px solid var(--line); padding: 2px; width: fit-content; max-width: 100%; }
-    .cell { width: 28px; height: 28px; display: grid; place-items: center; font-size: 14px; font-weight: 700; }
+    .cell { width: 28px; height: 28px; display: grid; place-items: center; font-size: 14px; font-weight: 700; transition: filter .18s ease, opacity .18s ease, box-shadow .18s ease, transform .18s ease; position: relative; overflow: hidden; }
+    .cell.unseen { opacity: 1; filter: grayscale(.55) brightness(.62); }
+    .cell.seen { opacity: 1; filter: grayscale(.18) brightness(.82); }
+    .cell.visible { opacity: 1; filter: brightness(1.18) saturate(1.30); box-shadow: inset 0 0 0 2px rgba(14, 165, 233, .72), 0 0 14px rgba(14, 165, 233, .32); z-index: 2; }
+    .cell.unseen::after { content: ""; position: absolute; inset: 0; background: rgba(15, 23, 42, .64); pointer-events: none; }
+    .cell.seen::after { content: ""; position: absolute; inset: 0; background: rgba(15, 23, 42, .24); pointer-events: none; }
+    .cell.visible::after { display: none; }
+    .cell.agent.visible { transform: scale(1.05); box-shadow: inset 0 0 0 2px rgba(255,255,255,.80), 0 0 18px rgba(14,165,233,.60); }
     .wall { background: var(--wall); }
     .empty { background: var(--path); }
     .coin { background: var(--coin); color: #7c4a03; }
@@ -99,7 +106,7 @@ HTML_TEMPLATE = r"""<!doctype html>
     const scrub = document.getElementById('scrub');
     scrub.max = Math.max(0, frames.length - 1);
     document.getElementById('stats').innerHTML = Object.entries(data.summary)
-      .filter(([k]) => ['agent','success','boss_clear','gold','steps','score','trap_count'].includes(k))
+      .filter(([k]) => ['agent','success','boss_clear','gold','steps','score','oracle_score','score_of_oracle_pct','score_gap_pct','trap_count'].includes(k))
       .map(([k,v]) => `<div class="stat"><span>${k}</span><b>${typeof v === 'number' ? Number(v).toFixed(3).replace(/\.000$/,'') : v}</b></div>`)
       .join('');
     function cls(ch) {
@@ -108,11 +115,32 @@ HTML_TEMPLATE = r"""<!doctype html>
     function label(ch) {
       return ch === '#' || ch === '.' ? '' : ch;
     }
+    function observedUntil(frameIndex) {
+      const seen = new Set();
+      for (let i = 0; i <= frameIndex; i++) {
+        const p = frames[i]?.pos;
+        if (!p) continue;
+        for (let dr = -1; dr <= 1; dr++) {
+          for (let dc = -1; dc <= 1; dc++) {
+            seen.add(`${p[0] + dr},${p[1] + dc}`);
+          }
+        }
+      }
+      return seen;
+    }
+    function visibilityClass(r, c, seen, current) {
+      const inCurrentVision = Math.abs(r - current[0]) <= 1 && Math.abs(c - current[1]) <= 1;
+      if (inCurrentVision) return 'visible';
+      if (seen.has(`${r},${c}`)) return 'seen';
+      return 'unseen';
+    }
     function render() {
       const f = frames[idx];
       const rows = f.grid;
+      const current = f.pos ?? [-999, -999];
+      const seen = observedUntil(idx);
       board.style.gridTemplateColumns = `repeat(${rows[0].length}, 1fr)`;
-      board.innerHTML = rows.flatMap(row => [...row].map(ch => `<div class="cell ${cls(ch)}">${label(ch)}</div>`)).join('');
+      board.innerHTML = rows.flatMap((row, r) => [...row].map((ch, c) => `<div class="cell ${cls(ch)} ${visibilityClass(r, c, seen, current)}">${label(ch)}</div>`)).join('');
       document.getElementById('frameInfo').innerHTML = `<table><tbody>
         <tr><th>frame</th><td>${idx + 1}/${frames.length}</td></tr>
         <tr><th>action</th><td>${f.action ?? 'START'}</td></tr>
@@ -120,6 +148,9 @@ HTML_TEMPLATE = r"""<!doctype html>
         <tr><th>gold</th><td>${f.gold}</td></tr>
         <tr><th>steps</th><td>${f.steps}</td></tr>
         <tr><th>score</th><td>${Number(f.score).toFixed(3)}</td></tr>
+        <tr><th>oracle score</th><td>${data.summary.oracle_score !== undefined ? Number(data.summary.oracle_score).toFixed(3) : "-"}</td></tr>
+        <tr><th>gap</th><td>${data.summary.score_gap_pct !== undefined ? Number(data.summary.score_gap_pct).toFixed(2) + "%" : "-"}</td></tr>
+        <tr><th>vision</th><td>当前 3x3 明亮高亮；历史记忆半暗；未观察区域有深色阴影但保留全图参照</td></tr>
       </tbody></table>`;
       document.getElementById('gridText').textContent = rows.join('\n');
       scrub.value = idx;
