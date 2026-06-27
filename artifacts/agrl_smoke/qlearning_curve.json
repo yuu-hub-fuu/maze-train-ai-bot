@@ -1,7 +1,0 @@
-{
-  "episodes": 60,
-  "q_states": 297,
-  "val_success_rate": 0.5,
-  "val_avg_score": 6.796514976958525,
-  "val_avg_steps": 29.75
-}

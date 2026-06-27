@@ -2,17 +2,10 @@ __pycache__/
 *.py[cod]
 *.pyo
 
-tmp/
-logs/
-
 .env
 .venv/
 venv/
 
-artifacts/__pycache__/
-artifacts/agrl_15_valid/
-artifacts/agrl_large/
-artifacts/agrl_large_valid/
-artifacts/agrl_v2_smoke/
-artifacts/tmp_oracle_generation_check/
-
+# generated visualizations / scratch
+*.demo.html
+out.html

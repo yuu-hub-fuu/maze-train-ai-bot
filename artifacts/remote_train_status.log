@@ -1,121 +1,0 @@
-[2026-06-22 23:58:34] COMMAND
-bash -lc '
-cd /hy-tmp/maze-train-ai-bot
-echo "--- pid ---"
-cat logs/train_alphamaze_lora_cached.pid 2>/dev/null || true
-echo "--- ps ---"
-pid=$(cat logs/train_alphamaze_lora_cached.pid 2>/dev/null || true)
-if [ -n "$pid" ]; then ps -fp "$pid" || true; fi
-echo "--- gpu ---"
-nvidia-smi || true
-echo "--- train log tail ---"
-tail -80 logs/train_alphamaze_lora_cached.log 2>/dev/null || true
-'
-
---- pid ---
-176534
---- ps ---
-UID          PID    PPID  C STIME TTY          TIME CMD
-root      176534       1  0 23:51 ?        00:00:00 bash /hy-tmp/maze-train-ai-bot/run_train_alphamaze_lora_cached.sh
---- gpu ---
-Mon Jun 22 23:58:33 2026       
-+-----------------------------------------------------------------------------------------+
-| NVIDIA-SMI 570.195.03             Driver Version: 570.195.03     CUDA Version: 12.8     |
-|-----------------------------------------+------------------------+----------------------+
-| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
-| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
-|                                         |                        |               MIG M. |
-|=========================================+========================+======================|
-|   0  NVIDIA GeForce RTX 3090        On  |   00000000:81:00.0 Off |                  N/A |
-|  0%   57C    P0            172W /  390W |    5608MiB /  24576MiB |     28%      Default |
-|                                         |                        |                  N/A |
-+-----------------------------------------+------------------------+----------------------+
-                                                                                         
-+-----------------------------------------------------------------------------------------+
-| Processes:                                                                              |
-|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
-|        ID   ID                                                               Usage      |
-|=========================================================================================|
-+-----------------------------------------------------------------------------------------+
---- train log tail ---
-{'loss': 0.0, 'grad_norm': nan, 'learning_rate': 0.0002, 'epoch': 0.07}
-{'loss': 0.0, 'grad_norm': nan, 'learning_rate': 0.0002, 'epoch': 0.07}
-{'loss': 0.0, 'grad_norm': nan, 'learning_rate': 0.0002, 'epoch': 0.07}
-{'loss': 0.0, 'grad_norm': nan, 'learning_rate': 0.0002, 'epoch': 0.08}
-{'loss': 0.0, 'grad_norm': nan, 'learning_rate': 0.0002, 'epoch': 0.08}
-{'loss': 0.0, 'grad_norm': nan, 'learning_rate': 0.0002, 'epoch': 0.08}
-{'loss': 0.0, 'grad_norm': nan, 'learning_rate': 0.0002, 'epoch': 0.08}
-{'loss': 0.0, 'grad_norm': nan, 'learning_rate': 0.0002, 'epoch': 0.08}
-{'loss': 0.0, 'grad_norm': nan, 'learning_rate': 0.0002, 'epoch': 0.09}
-{'loss': 0.0, 'grad_norm': nan, 'learning_rate': 0.0002, 'epoch': 0.09}
-{'loss': 0.0, 'grad_norm': nan, 'learning_rate': 0.0002, 'epoch': 0.09}
-{'loss': 0.0, 'grad_norm': nan, 'learning_rate': 0.0002, 'epoch': 0.09}
-{'loss': 0.0, 'grad_norm': nan, 'learning_rate': 0.0002, 'epoch': 0.09}
-{'loss': 0.0, 'grad_norm': nan, 'learning_rate': 0.0002, 'epoch': 0.1}
-{'loss': 0.0, 'grad_norm': nan, 'learning_rate': 0.0002, 'epoch': 0.1}
-{'loss': 0.0, 'grad_norm': nan, 'learning_rate': 0.0002, 'epoch': 0.1}
-{'loss': 0.0, 'grad_norm': nan, 'learning_rate': 0.0002, 'epoch': 0.1}
-{'loss': 0.0, 'grad_norm': nan, 'learning_rate': 0.0002, 'epoch': 0.1}
-{'loss': 0.0, 'grad_norm': nan, 'learning_rate': 0.0002, 'epoch': 0.11}
-{'loss': 0.0, 'grad_norm': nan, 'learning_rate': 0.0002, 'epoch': 0.11}
-{'loss': 0.0, 'grad_norm': nan, 'learning_rate': 0.0002, 'epoch': 0.11}
-{'loss': 0.0, 'grad_norm': nan, 'learning_rate': 0.0002, 'epoch': 0.11}
-{'loss': 0.0, 'grad_norm': nan, 'learning_rate': 0.0002, 'epoch': 0.11}
-{'loss': 0.0, 'grad_norm': nan, 'learning_rate': 0.0002, 'epoch': 0.12}
-{'loss': 0.0, 'grad_norm': nan, 'learning_rate': 0.0002, 'epoch': 0.12}
-{'loss': 0.0, 'grad_norm': nan, 'learning_rate': 0.0002, 'epoch': 0.12}
-{'loss': 0.0, 'grad_norm': nan, 'learning_rate': 0.0002, 'epoch': 0.12}
-{'loss': 0.0, 'grad_norm': nan, 'learning_rate': 0.0002, 'epoch': 0.12}
-{'loss': 0.0, 'grad_norm': nan, 'learning_rate': 0.0002, 'epoch': 0.13}
-{'loss': 0.0, 'grad_norm': nan, 'learning_rate': 0.0002, 'epoch': 0.13}
-{'loss': 0.0, 'grad_norm': nan, 'learning_rate': 0.0002, 'epoch': 0.13}
-{'loss': 0.0, 'grad_norm': nan, 'learning_rate': 0.0002, 'epoch': 0.13}
-{'loss': 0.0, 'grad_norm': nan, 'learning_rate': 0.0002, 'epoch': 0.13}
-{'loss': 0.0, 'grad_norm': nan, 'learning_rate': 0.0002, 'epoch': 0.14}
-{'loss': 0.0, 'grad_norm': nan, 'learning_rate': 0.0002, 'epoch': 0.14}
-{'loss': 0.0, 'grad_norm': nan, 'learning_rate': 0.0002, 'epoch': 0.14}
-{'loss': 0.0, 'grad_norm': nan, 'learning_rate': 0.0002, 'epoch': 0.14}
-{'loss': 0.0, 'grad_norm': nan, 'learning_rate': 0.0002, 'epoch': 0.14}
-{'loss': 0.0, 'grad_norm': nan, 'learning_rate': 0.0002, 'epoch': 0.15}
-{'loss': 0.0, 'grad_norm': nan, 'learning_rate': 0.0002, 'epoch': 0.15}
-{'loss': 0.0, 'grad_norm': nan, 'learning_rate': 0.0002, 'epoch': 0.15}
-{'loss': 0.0, 'grad_norm': nan, 'learning_rate': 0.0002, 'epoch': 0.15}
-{'loss': 0.0, 'grad_norm': nan, 'learning_rate': 0.0002, 'epoch': 0.15}
-{'loss': 0.0, 'grad_norm': nan, 'learning_rate': 0.0002, 'epoch': 0.16}
-{'loss': 0.0, 'grad_norm': nan, 'learning_rate': 0.0002, 'epoch': 0.16}
-{'loss': 0.0, 'grad_norm': nan, 'learning_rate': 0.0002, 'epoch': 0.16}
-{'loss': 0.0, 'grad_norm': nan, 'learning_rate': 0.0002, 'epoch': 0.16}
-{'loss': 0.0, 'grad_norm': nan, 'learning_rate': 0.0002, 'epoch': 0.16}
-{'loss': 0.0, 'grad_norm': nan, 'learning_rate': 0.0002, 'epoch': 0.17}
-{'loss': 0.0, 'grad_norm': nan, 'learning_rate': 0.0002, 'epoch': 0.17}
-{'loss': 0.0, 'grad_norm': nan, 'learning_rate': 0.0002, 'epoch': 0.17}
-{'loss': 0.0, 'grad_norm': nan, 'learning_rate': 0.0002, 'epoch': 0.17}
-{'loss': 0.0, 'grad_norm': nan, 'learning_rate': 0.0002, 'epoch': 0.17}
-{'loss': 0.0, 'grad_norm': nan, 'learning_rate': 0.0002, 'epoch': 0.18}
-{'loss': 0.0, 'grad_norm': nan, 'learning_rate': 0.0002, 'epoch': 0.18}
-{'loss': 0.0, 'grad_norm': nan, 'learning_rate': 0.0002, 'epoch': 0.18}
-{'loss': 0.0, 'grad_norm': nan, 'learning_rate': 0.0002, 'epoch': 0.18}
-{'loss': 0.0, 'grad_norm': nan, 'learning_rate': 0.0002, 'epoch': 0.18}
-{'loss': 0.0, 'grad_norm': nan, 'learning_rate': 0.0002, 'epoch': 0.19}
-{'loss': 0.0, 'grad_norm': nan, 'learning_rate': 0.0002, 'epoch': 0.19}
-{'loss': 0.0, 'grad_norm': nan, 'learning_rate': 0.0002, 'epoch': 0.19}
-{'loss': 0.0, 'grad_norm': nan, 'learning_rate': 0.0002, 'epoch': 0.19}
-{'loss': 0.0, 'grad_norm': nan, 'learning_rate': 0.0002, 'epoch': 0.19}
-{'loss': 0.0, 'grad_norm': nan, 'learning_rate': 0.0002, 'epoch': 0.2}
-{'loss': 0.0, 'grad_norm': nan, 'learning_rate': 0.0002, 'epoch': 0.2}
-{'loss': 0.0, 'grad_norm': nan, 'learning_rate': 0.0002, 'epoch': 0.2}
-{'loss': 0.0, 'grad_norm': nan, 'learning_rate': 0.0002, 'epoch': 0.2}
-{'loss': 0.0, 'grad_norm': nan, 'learning_rate': 0.0002, 'epoch': 0.2}
-{'loss': 0.0, 'grad_norm': nan, 'learning_rate': 0.0002, 'epoch': 0.21}
-{'loss': 0.0, 'grad_norm': nan, 'learning_rate': 0.0002, 'epoch': 0.21}
-{'loss': 0.0, 'grad_norm': nan, 'learning_rate': 0.0002, 'epoch': 0.21}
-{'loss': 0.0, 'grad_norm': nan, 'learning_rate': 0.0002, 'epoch': 0.21}
-{'loss': 0.0, 'grad_norm': nan, 'learning_rate': 0.0002, 'epoch': 0.21}
-{'loss': 0.0, 'grad_norm': nan, 'learning_rate': 0.0002, 'epoch': 0.22}
-{'loss': 0.0, 'grad_norm': nan, 'learning_rate': 0.0002, 'epoch': 0.22}
-{'loss': 0.0, 'grad_norm': nan, 'learning_rate': 0.0002, 'epoch': 0.22}
-{'loss': 0.0, 'grad_norm': nan, 'learning_rate': 0.0002, 'epoch': 0.22}
-{'loss': 0.0, 'grad_norm': nan, 'learning_rate': 0.0002, 'epoch': 0.22}
-{'loss': 0.0, 'grad_norm': nan, 'learning_rate': 0.0002, 'epoch': 0.23}
- 38%|███▊      | 114/300 [05:07<08:20,  2.69s/it] 38%|███▊      | 115/300 [05:09<08:17,  2.69s/it]                                                  38%|███▊      | 115/300 [05:09<08:17,  2.69s/it] 39%|███▊      | 116/300 [05:12<08:14,  2.69s/it]                                                  39%|███▊      | 116/300 [05:12<08:14,  2.69s/it] 39%|███▉      | 117/300 [05:15<08:12,  2.69s/it]                                                  39%|███▉      | 117/300 [05:15<08:12,  2.69s/it] 39%|███▉      | 118/300 [05:17<08:09,  2.69s/it]                                                  39%|███▉      | 118/300 [05:17<08:09,  2.69s/it] 40%|███▉      | 119/300 [05:20<07:54,  2.62s/it]                                                  40%|███▉      | 119/300 [05:20<07:54,  2.62s/it] 40%|████      | 120/300 [05:22<07:28,  2.49s/it]                                                  40%|████      | 120/300 [05:22<07:28,  2.49s/it] 40%|████      | 121/300 [05:24<07:08,  2.40s/it]                                                  40%|████      | 121/300 [05:24<07:08,  2.40s/it] 41%|████      | 122/300 [05:27<06:55,  2.33s/it]                                                  41%|████      | 122/300 [05:27<06:55,  2.33s/it] 41%|████      | 123/300 [05:29<06:44,  2.29s/it]                                                  41%|████      | 123/300 [05:29<06:44,  2.29s/it] 41%|████▏     | 124/300 [05:31<06:37,  2.26s/it]                                                  41%|████▏     | 124/300 [05:31<06:37,  2.26s/it] 42%|████▏     | 125/300 [05:33<06:30,  2.23s/it]                                                  42%|████▏     | 125/300 [05:33<06:30,  2.23s/it] 42%|████▏     | 126/300 [05:35<06:25,  2.22s/it]                                                  42%|████▏     | 126/300 [05:35<06:25,  2.22s/it] 42%|████▏     | 127/300 [05:37<06:21,  2.20s/it]                                                  42%|████▏     | 127/300 [05:37<06:21,  2.20s/it] 43%|████▎     | 128/300 [05:40<06:17,  2.20s/it]                                                  43%|████▎     | 128/300 [05:40<06:17,  2.20s/it] 43%|████▎     | 129/300 [05:42<06:14,  2.19s/it]                                                  43%|████▎     | 129/300 [05:42<06:14,  2.19s/it] 43%|████▎     | 130/300 [05:44<06:11,  2.19s/it]                                                  43%|████▎     | 130/300 [05:44<06:11,  2.19s/it] 44%|████▎     | 131/300 [05:46<06:08,  2.18s/it]                                                  44%|████▎     | 131/300 [05:46<06:08,  2.18s/it] 44%|████▍     | 132/300 [05:48<06:06,  2.18s/it]                                                  44%|████▍     | 132/300 [05:48<06:06,  2.18s/it] 44%|████▍     | 133/300 [05:50<06:04,  2.18s/it]                                                  44%|████▍     | 133/300 [05:50<06:04,  2.18s/it] 45%|████▍     | 134/300 [05:53<06:01,  2.18s/it]                                                  45%|████▍     | 134/300 [05:53<06:01,  2.18s/it] 45%|████▌     | 135/300 [05:55<05:59,  2.18s/it]                                                  45%|████▌     | 135/300 [05:55<05:59,  2.18s/it] 45%|████▌     | 136/300 [05:57<05:57,  2.18s/it]                                                  45%|████▌     | 136/300 [05:57<05:57,  2.18s/it] 46%|████▌     | 137/300 [05:59<05:54,  2.18s/it]                                                  46%|████▌     | 137/300 [05:59<05:54,  2.18s/it] 46%|████▌     | 138/300 [06:01<05:52,  2.18s/it]                                                  46%|████▌     | 138/300 [06:01<05:52,  2.18s/it] 46%|████▋     | 139/300 [06:04<05:50,  2.18s/it]                                                  46%|████▋     | 139/300 [06:04<05:50,  2.18s/it] 47%|████▋     | 140/300 [06:06<05:48,  2.18s/it]                                                  47%|████▋     | 140/300 [06:06<05:48,  2.18s/it] 47%|████▋     | 141/300 [06:08<05:46,  2.18s/it]                                                  47%|████▋     | 141/300 [06:08<05:46,  2.18s/it] 47%|████▋     | 142/300 [06:10<05:45,  2.18s/it]                                                  47%|████▋     | 142/300 [06:10<05:45,  2.18s/it] 48%|████▊     | 143/300 [06:12<05:43,  2.19s/it]                                                  48%|████▊     | 143/300 [06:12<05:43,  2.19s/it] 48%|████▊     | 144/300 [06:14<05:41,  2.19s/it]                                                  48%|████▊     | 144/300 [06:14<05:41,  2.19s/it] 48%|████▊     | 145/300 [06:17<05:39,  2.19s/it]                                                  48%|████▊     | 145/300 [06:17<05:39,  2.19s/it] 49%|████▊     | 146/300 [06:19<05:37,  2.19s/it]                                                  49%|████▊     | 146/300 [06:19<05:37,  2.19s/it] 49%|████▉     | 147/300 [06:21<05:34,  2.19s/it]                                                  49%|████▉     | 147/300 [06:21<05:34,  2.19s/it] 49%|████▉     | 148/300 [06:23<05:32,  2.19s/it]                                                  49%|████▉     | 148/300 [06:23<05:32,  2.19s/it] 50%|████▉     | 149/300 [06:25<05:30,  2.19s/it]                                                  50%|████▉     | 149/300 [06:25<05:30,  2.19s/it] 50%|█████     | 150/300 [06:28<05:27,  2.19s/it]                                                  50%|█████     | 150/300 [06:28<05:27,  2.19s/it] 50%|█████     | 151/300 [06:30<05:25,  2.18s/it]                                                  50%|█████     | 151/300 [06:30<05:25,  2.18s/it] 51%|█████     | 152/300 [06:32<05:23,  2.18s/it]                                                  51%|█████     | 152/300 [06:32<05:23,  2.18s/it] 51%|█████     | 153/300 [06:34<05:21,  2.19s/it]                                                  51%|█████     | 153/300 [06:34<05:21,  2.19s/it] 51%|█████▏    | 154/300 [06:36<05:19,  2.19s/it]                                                  51%|█████▏    | 154/300 [06:36<05:19,  2.19s/it] 52%|█████▏    | 155/300 [06:39<05:17,  2.19s/it]                                                  52%|█████▏    | 155/300 [06:39<05:17,  2.19s/it] 52%|█████▏    | 156/300 [06:41<05:14,  2.19s/it]                                                  52%|█████▏    | 156/300 [06:41<05:14,  2.19s/it] 52%|█████▏    | 157/300 [06:43<05:12,  2.19s/it]                                                  52%|█████▏    | 157/300 [06:43<05:12,  2.19s/it] 53%|█████▎    | 158/300 [06:45<05:10,  2.19s/it]                                                  53%|█████▎    | 158/300 [06:45<05:10,  2.19s/it] 53%|█████▎    | 159/300 [06:47<05:07,  2.18s/it]                                                  53%|█████▎    | 159/300 [06:47<05:07,  2.18s/it] 53%|█████▎    | 160/300 [06:49<05:05,  2.19s/it]                                                  53%|█████▎    | 160/300 [06:49<05:05,  2.19s/it] 54%|█████▎    | 161/300 [06:52<05:03,  2.18s/it]                                                  54%|█████▎    | 161/300 [06:52<05:03,  2.18s/it] 54%|█████▍    | 162/300 [06:54<05:01,  2.18s/it]                                                  54%|█████▍    | 162/300 [06:54<05:01,  2.18s/it] 54%|█████▍    | 163/300 [06:56<04:58,  2.18s/it]                                                  54%|█████▍    | 163/300 [06:56<04:58,  2.18s/it] 55%|█████▍    | 164/300 [06:58<04:56,  2.18s/it]                                                  55%|█████▍    | 164/300 [06:58<04:56,  2.18s/it] 55%|█████▌    | 165/300 [07:00<04:54,  2.18s/it]                                                  55%|█████▌    | 165/300 [07:00<04:54,  2.18s/it] 55%|█████▌    | 166/300 [07:03<04:51,  2.18s/it]                                                  55%|█████▌    | 166/300 [07:03<04:51,  2.18s/it] 56%|█████▌    | 167/300 [07:05<04:49,  2.18s/it]                                                  56%|█████▌    | 167/300 [07:05<04:49,  2.18s/it] 56%|█████▌    | 168/300 [07:07<04:47,  2.18s/it]                                                  56%|█████▌    | 168/300 [07:07<04:47,  2.18s/it] 56%|█████▋    | 169/300 [07:09<04:45,  2.18s/it]                                                  56%|█████▋    | 169/300 [07:09<04:45,  2.18s/it] 57%|█████▋    | 170/300 [07:11<04:43,  2.18s/it]                                                  57%|█████▋    | 170/300 [07:11<04:43,  2.18s/it] 57%|█████▋    | 171/300 [07:13<04:41,  2.18s/it]                                                  57%|█████▋    | 171/300 [07:13<04:41,  2.18s/it]
-[2026-06-22 23:58:34] EXIT 0

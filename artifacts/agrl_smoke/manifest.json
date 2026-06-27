@@ -1,8 +1,0 @@
-{
-  "train": 12,
-  "val": 4,
-  "test": 4,
-  "size": 9,
-  "seed": 7,
-  "vision_rule": "agent observes only 3x3 around current position; previously observed cells are stored in memory; unknown cells are hidden as ?"
-}

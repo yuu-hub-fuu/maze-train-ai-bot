@@ -1,7 +1,0 @@
-start resume upload 12 files total=3400.5 MB
-initial remote bytes=1904.7 MB (56.0%)
-skip 1/12 refs/main 0.0 MB complete
-skip 2/12 snapshots/2a7c08f3614fa672bb1be573b210b3b5e575cd30/config.json 0.0 MB complete
-skip 3/12 snapshots/2a7c08f3614fa672bb1be573b210b3b5e575cd30/generation_config.json 0.0 MB complete
-resume 4/12 snapshots/2a7c08f3614fa672bb1be573b210b3b5e575cd30/model.safetensors from 1893.8/3389.6 MB
-progress snapshots/2a7c08f3614fa672bb1be573b210b3b5e575cd30/model.safetensors: remote 1897.8/3389.6 MB, total 1908.7/3400.5 MB (56.1%), file 0.03 MB/s, session 0.03 MB/s

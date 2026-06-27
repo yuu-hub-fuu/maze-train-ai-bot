@@ -1,5 +1,28 @@
 # MazeGPT-Agent Run State
 
+## ⚠️ DIRECTION UPDATE (2026-06-26): pivoted to classic algorithms
+
+The neural approaches below (DQN / enhanced/frontier DQN / option-Q / waypoint-Q /
+target-ranker / CNN-BC / AlphaMaze LoRA) are **deprecated**. Evidence: on the team's
+own 200-maze eval the classic `safe_ratio_planner` (1.73 value/step, 29 ms, no GPU)
+essentially tied the best DQN (1.79, ~300 ms), and a learned policy does not generalize
+to the cross-test mazes; worse, the DQN was trained against a simplified boss model
+(`boss_cost` gold gate) that does **not** match the official input format
+(`B` HP list + `PlayerSkills` cooldowns + `minRouds` + `CoinConsumption`).
+
+New deliverable lives in **`maze_ai/`** — a deterministic, training-free, official-format
+AI player (task 2) built from the graded paradigms:
+
+- BFS shortest paths (maze = perfect maze = tree).
+- Bitmask DP (Held-Karp) for the optimal resource-collection route.
+- Branch-and-bound for min-round BOSS battle + optimal skill sequence.
+- Greedy for 3x3 real-time pickup.
+
+Results: official `maze_15_15.json` → success, 330 value / 78 steps, **score 4.23**,
+boss in 11/20 rounds with 0 coins. 50 random 15x15 mazes → **100% success**, avg score
+**4.27**, ~0.6 s/maze. Boss solver verified minimal vs brute force; planner verified
+equal to full subset-endpoint enumeration. See `maze_ai/README.md`. No server needed.
+
 ## Objective
 
 Complete task 2 as a model-centered Maze Agent project:
