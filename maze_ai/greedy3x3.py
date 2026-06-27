@@ -126,9 +126,14 @@ def _render(spec: MazeSpec, pos: Coord, collected: set, triggered: set) -> list[
 
 
 def _frame(spec, pos, picked, step, collected, triggered) -> dict[str, Any]:
+    # The 3x3 window currently visible to the agent (for fog-of-war rendering).
+    vision = [[pos[0] + dr, pos[1] + dc]
+              for dr in (-1, 0, 1) for dc in (-1, 0, 1)
+              if 0 <= pos[0] + dr < spec.height and 0 <= pos[1] + dc < spec.width]
     return {
         "step": step,
         "pos": list(pos),
         "picked": picked,
+        "vision": vision,
         "grid": _render(spec, pos, collected, triggered),
     }
