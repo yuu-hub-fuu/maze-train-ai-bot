@@ -110,6 +110,12 @@ def plan_boss_fight(spec: MazeSpec, available_coins: int | None = None) -> BossP
     if not boss_hps:
         return BossPlan(0, [], True, 0, 0, True, [])
 
+    # Unbeatable with the given kit (no skill deals positive damage): fail safely
+    # instead of crashing. The official spec always provides a damaging no-cooldown
+    # skill, so this only guards against malformed inputs.
+    if max((s.damage for s in spec.skills), default=0) <= 0:
+        return BossPlan(10**9, [], False, 0, 0, False, [])
+
     limit = spec.min_rounds
     full_rounds, full_seq = solve_boss_group(boss_hps, spec.skills)
     names = _skill_names(spec)
@@ -136,16 +142,19 @@ def plan_boss_fight(spec: MazeSpec, available_coins: int | None = None) -> BossP
         # play at most `limit` rounds of this attempt
         played = seq[:limit]
         sequence.extend(played)
-        bi, hp = _advance(boss_hps, spec.skills, bi, hp, played)
+        new_bi, new_hp = _advance(boss_hps, spec.skills, bi, hp, played)
+        if (new_bi, new_hp) == (bi, hp):
+            break  # no progress possible (e.g. round limit 0): give up safely
+        bi, hp = new_bi, new_hp
         if bi >= len(boss_hps):
             cleared = True
             break
-        # attempt failed -> must revive
+        # attempt failed but progress (damage / dead bosses) persists into the
+        # next life; only cooldowns reset. Revive if we can still afford it.
         if coins_left < spec.coin_consumption:
             break
         coins_left -= spec.coin_consumption
         revives += 1
-        hp = boss_hps[bi]  # boss HP for the failed boss resets on a fresh life
 
     return BossPlan(
         min_rounds=full_rounds,

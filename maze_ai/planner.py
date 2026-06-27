@@ -60,6 +60,30 @@ def plan_full_exploration(spec: MazeSpec) -> OptimalPlan:
     boss_plan = plan_boss_fight(spec, available_coins=len(coins) * COIN_VALUE)
     boss_coins_spent = boss_plan.coins_spent
 
+    # Boundary: too many coins for the exponential bitmask DP. If the maze is a
+    # perfect maze (tree), switch to the polynomial-time tree-orienteering DP,
+    # which stays exact; otherwise fall back to the greedy heuristic below.
+    if len(coins) > MAX_DP_COINS:
+        from .tree_orienteering import is_perfect_maze, plan_tree_orienteering
+        if is_perfect_maze(spec):
+            tr = plan_tree_orienteering(spec)
+            res, steps, ncoins, ntraps, _ = _score_path(spec, tr.coord_path, boss_coins_spent)
+            chosen = set(tr.coord_path)
+            return OptimalPlan(
+                moves=path_to_moves(tr.coord_path),
+                coord_path=tr.coord_path,
+                resource=res,
+                steps=steps,
+                score=(res / steps if steps else 0.0),
+                coins_collected=ncoins,
+                traps_triggered=ntraps,
+                chosen_coins=[c for c in coins if c in chosen],
+                boss_plan=boss_plan,
+                method="tree_orienteering",
+                notes={"num_coins": len(coins), "candidates_evaluated": 0,
+                       "boss_within_limit": boss_plan.feasible_within_limit},
+            )
+
     # Waypoint graph over start, coins, boss, exit.
     terminals = [spec.boss, spec.exit] if spec.boss is not None else [spec.exit]
     waypoints = [spec.start] + coins + [t for t in terminals]
